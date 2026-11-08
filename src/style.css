@@ -1,0 +1,369 @@
+@charset "UTF-8";
+
+/* =========================================
+   基本設定
+   ========================================= */
+:root {
+  --bg: #f3f3f3;
+  --paper: #f8f7f3;
+  --line: #777;
+  --text: #222;
+  --accent: #d8c400;
+  --accent-dark: #7c7100;
+  --content-width: 900px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #d9d9d9;
+  color: var(--text);
+  font-family:
+    "Yu Gothic", "Hiragino Kaku Gothic ProN",
+    "Meiryo", sans-serif;
+  line-height: 1.7;
+}
+
+.site {
+  width: min(100%, var(--content-width));
+  margin: 0 auto;
+  background: var(--bg);
+  overflow: hidden;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* =========================================
+   画像差し替え用の枠
+   ※ここに <img src="..."> を入れればOK
+   ========================================= */
+.image-placeholder {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 180px;
+  border: 0;
+  background: transparent;
+  color: #777;
+  text-align: center;
+}
+
+.image-placeholder span {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.image-placeholder small {
+  margin-top: 4px;
+}
+
+/* =========================================
+   ヒーロー
+   ========================================= */
+.header {
+  background: #eee;
+  padding-bottom: 14px;
+}
+
+.header {
+  width: 100%;
+  height: 430px;
+  border: 0;
+  border-bottom: 1px solid #999;
+}
+
+.header h1 {
+  margin: 0;
+  padding: 10px 15px 0;
+  text-align: center;
+  font-family: serif;
+  font-size: clamp(18px, 3vw, 28px);
+  font-weight: 700;
+  color: #756b00;
+  text-shadow: 1px 1px 0 #fff;
+}
+
+/* =========================================
+   共通セクション
+   ========================================= */
+.section {
+  border-top: 1px solid var(--line);
+  padding: 46px 5%;
+}
+
+.section h2 {
+  margin: 0 0 34px;
+  text-align: center;
+  font-family: serif;
+  font-size: clamp(22px, 3.2vw, 31px);
+  color: #746900;
+  letter-spacing: .08em;
+  text-shadow: 1px 1px 0 #fff;
+}
+
+/* =========================================
+   訪問店
+   ========================================= */
+.visited-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px 0px;
+  width: min(100%, 900px);
+  margin: auto;
+  text-align: center;
+  font-size: 14px;
+}
+
+/* =========================================
+   うどんの特徴
+   ========================================= */
+.features {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.features h2 {
+  padding: 0 5%;
+}
+
+.feature-row {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  min-height: 300px;
+  overflow: hidden;
+  background: #f4f1e8;
+}
+
+.feature-row.reverse {
+  background: #ededed;
+}
+
+.feature-text {
+  position: relative;
+  z-index: 1;
+  width: 55%;
+  padding: 30px 5%;
+}
+
+.feature-row.reverse .feature-text {
+  margin-left: auto;
+}
+
+.feature-text h3 {
+  margin: 0 0 14px;
+  font-family: zen-antique, serif;
+  font-size: clamp(21px, 3vw, 28px);
+}
+
+.feature-text p {
+  margin: 0;
+  font-family: zen-antique, serif;
+  font-size: 13px;
+}
+
+.feature-image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 72%;
+  height: 100%;
+  opacity: .55;
+}
+
+.feature-row.reverse .feature-image {
+  right: auto;
+  left: 0;
+}
+
+.feature-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.right-fade {
+  mask-image: linear-gradient(
+    to right,
+    #000 0%,
+    #000 0%,
+    transparent 100%
+  );
+}
+
+.left-fade {
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    #000 100%,
+    #000 100%
+  );
+}
+
+/* =========================================
+   おすすめの食べ方
+   ========================================= */
+.howto-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 38px 60px;
+  max-width: 760px;
+  margin: auto;
+}
+
+.step {
+  text-align: center;
+}
+
+.step h3 {
+  min-height: 58px;
+  margin: 0 0 12px;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.step-image {
+  width: 100%;
+  aspect-ratio: 1.35 / 1;
+  min-height: 0;
+}
+
+/* =========================================
+   メニュー
+   ========================================= */
+.menu {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid #000;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px 52px;
+  max-width: 760px;
+  margin: auto;
+}
+
+.menu-card {
+  text-align: center;
+  padding-bottom: 8px;
+}
+
+.menu-card:last-child {
+  grid-column: 1 / 2;
+}
+
+.menu-image {
+  width: 80%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  margin: 0 auto 14px;
+  border: 0;
+  background: transparent;
+}
+
+.menu-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.menu-card h3 {
+  margin: 0 0 6px;
+  font-family: serif;
+  font-size: 18px;
+}
+
+.menu-card p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* =========================================
+   フッター
+   ========================================= */
+footer {
+  padding: 18px 20px 26px;
+  text-align: center;
+  font-size: 10px;
+  color: #7a7a7a;
+  letter-spacing: 0.08em;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* =========================================
+   スマホ
+   ========================================= */
+@media (max-width: 700px) {
+  body {
+    background: var(--bg);
+  }
+
+ .hero-image {
+    height: 300px;
+  }
+
+  .section {
+    padding-top: 34px;
+    padding-bottom: 34px;
+  }
+
+  .visited-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .feature-row,
+  .feature-row.reverse {
+    min-height: 260px;
+    margin-bottom: 14px;
+  }
+
+  .feature-text {
+    width: 100%;
+    padding: 22px 7%;
+  }
+
+  .feature-row.reverse .feature-text {
+    margin-left: 0;
+  }
+
+  .feature-image {
+    width: 100%;
+    opacity: .3;
+  }
+
+  .howto-grid,
+  .menu-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .menu-card:last-child {
+    grid-column: auto;
+  }
+
+  .menu-image {
+    max-width: 360px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
